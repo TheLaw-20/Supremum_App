@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supremum_app/authentication/login.dart';
-import 'package:supremum_app/route/navigation.dart';
+import 'package:supremum_app/screen/home_view.dart';
+import 'package:supremum_app/screen/search_view.dart';
 import 'package:supremum_app/screen/widget/questionsContainer.dart';
 
 class QuestionPage extends StatelessWidget {
@@ -10,6 +11,29 @@ class QuestionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey.shade200,
+        title: Text('Back'),
+        leading: IconButton(
+            onPressed: () {
+              Get.to(HomePage());
+            }, icon: Icon(Icons.arrow_back_ios_new_outlined),), 
+        actions: [
+          IconButton(onPressed: (){
+            Get.to(SearchPage());
+          }, icon: Icon(Icons.search_rounded)),
+          Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: Icon(Icons.menu), // Menu icon on the right
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer(); // Opens the end drawer
+                },
+              );
+            },
+          ),
+        ],
+      ),
       backgroundColor: Colors.grey.shade200,
       endDrawer: Drawer(
         child: ListView(
@@ -96,25 +120,7 @@ class QuestionPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        Get.to(NavigationPage());
-                      },
-                      icon: Icon(Icons.arrow_back_ios)),
-                  Text(
-                    'Back',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
+            
               Row(
                 children: [
                   Padding(
