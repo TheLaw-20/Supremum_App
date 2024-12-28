@@ -28,21 +28,21 @@ class _OnboardingPagesState extends State<OnboardingPages> {
 
   final List<OnboardingPage> pages = [
     OnboardingPage(
-      imagePath: 'assets/onboarding1.png', // Add your image path
+      imagePath: 'https://cdn.dribbble.com/users/2221077/screenshots/9023543/media/6ce82cc4d9dad08514cdd9fdf2cddd7d.jpg', // Add your image path
       title: 'Past questions Solutions and quizzes',
       description:
           'Get access to Past questions Solutions and quizzes Get access to Past questions Solutions and quizzes.',
       buttonText: 'Next',
     ),
     OnboardingPage(
-      imagePath: 'assets/onboarding2.png',
+      imagePath: 'https://static.vecteezy.com/system/resources/previews/025/668/850/non_2x/kid-using-smartphone-with-application-floating-icon-social-network-chat-message-internet-flat-style-illustration-vector.jpg',
       title: 'Career Orientation',
       description:
           'Explore career options with detailed info on \nfields, job prospects, and qualifications to \nhelp you decide.',
       buttonText: 'Next',
     ),
     OnboardingPage(
-      imagePath: 'assets/onboarding3.png',
+      imagePath: 'https://img.freepik.com/premium-vector/online-support-technical-chat-messaging_88272-4670.jpg',
       title: 'Professional schools, and \nUniversities',
       description:
           'Get access to Past questions Solutions and quizzes Get access to Past questions Solutions and quizzes.',
@@ -69,6 +69,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -102,7 +103,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               const SizedBox(height: 40),
               // Onboarding Image
               Expanded(
-                child: Image.asset(
+                child: Image.network(
                   pages[currentIndex].imagePath,
                   fit: BoxFit.contain,
                 ),

@@ -18,29 +18,42 @@ class QuestionContainer extends StatelessWidget {
             ]),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Mathematics - 2018',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Row(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('FET Buea'),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    child: Text(
+                      'Mathematics - 2018',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
                   Row(
                     children: [
-                      Icon(
-                        Icons.download,
-                        size: 15,
+                      Image.network('https://jsjd.info/wp-content/uploads/2022/01/1486565571-pdfw.png',
+                      height: 20,width: 20,),
+                      SizedBox(width: 20,),
+                      Text('FET Buea'),
+                      SizedBox(width: 150,),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.download,
+                            size: 15,
+                          ),
+                          Text(
+                            '200',
+                            style: TextStyle(fontSize: 12),
+                          )
+                        ],
                       ),
-                      Text(
-                        '200',
-                        style: TextStyle(fontSize: 12),
-                      )
                     ],
-                  ),
+                  )
                 ],
-              )
+              ),
             ],
           ),
         ),
